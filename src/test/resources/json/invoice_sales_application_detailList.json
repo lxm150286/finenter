@@ -1,0 +1,25 @@
+{
+  "application":[
+    {
+      "application_no":1,
+      "shop_order_id":"38928302",
+      "ec_order_no":"LXM02",
+      "order_type":1,
+      "del_flag":0
+    },
+    {
+      "application_no":1,
+      "shop_order_id":"38928302",
+      "ec_order_no":"LXM02",
+      "order_type":1,
+      "del_flag":0
+    }
+  ,{
+      "application_no":1,
+      "shop_order_id":"38928302",
+      "ec_order_no":"LXM02",
+      "order_type":1,
+      "del_flag":0
+    }
+  ]
+}
