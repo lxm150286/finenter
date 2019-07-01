@@ -1,4 +1,6 @@
 package util;
+import config.CommonConfig;
+
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -9,9 +11,9 @@ import java.util.Properties;
  * 数据库连接
  */
 public class DBConnUtil {
-    private static String url;
-    private static String user;
-    private static String password;
+    private static String url= CommonConfig.finenter_jdbc_url;
+    private static String user=CommonConfig.finenter_jdbc_user;
+    private static String password=CommonConfig.finenter_jdbc_password;
     static{
         Properties properties= new Properties();
         try {
@@ -26,10 +28,7 @@ public class DBConnUtil {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-        //从properties文件中获取jdbc的相关信息
-        url=properties.getProperty("finenter_jdbc_url");
-        user=properties.getProperty("finenter_jdbc_user");
-        password=properties.getProperty("finenter_jdbc_password"); }
+      }
 /**
  * 获取连接
  */

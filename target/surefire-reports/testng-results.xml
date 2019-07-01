@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="759" started-at="2019-07-01T06:01:51Z" finished-at="2019-07-01T06:01:52Z">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="759" started-at="2019-07-01T06:01:51Z" finished-at="2019-07-01T06:01:52Z">
+      <class name="testCase.NormalFlowCI">
+        <test-method status="PASS" signature="autoRegister()[pri:0, instance:testCase.NormalFlowCI@6615435c]" name="autoRegister" duration-ms="737" started-at="2019-07-01T14:01:51Z" description="注册" finished-at="2019-07-01T14:01:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- autoRegister -->
+        <test-method status="PASS" signature="pushUserInfo()[pri:0, instance:testCase.NormalFlowCI@6615435c]" name="pushUserInfo" duration-ms="0" started-at="2019-07-01T14:01:52Z" description="进件" depends-on-methods="testCase.NormalFlowCI.autoRegister" finished-at="2019-07-01T14:01:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- pushUserInfo -->
+      </class> <!-- testCase.NormalFlowCI -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>

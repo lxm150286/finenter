@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Suite">
+    <listeners>
+
+    </listeners>
+
+    <test preserve-order="true" name="Test">
+        <!--1、 TestNG 以包为测试单元 -->
+        <packages>
+            <package name="testCase"></package>
+        </packages>
+
+        <classes>
+            <class name="testCase.InvoiceSalesApplicationTest"></class>
+
+        </classes>
+    </test>
+
+</suite>

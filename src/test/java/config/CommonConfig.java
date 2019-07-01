@@ -1,6 +1,4 @@
 package config;
-
-
 import util.ConfigUtil;
 
 /**
