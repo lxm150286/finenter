@@ -13,7 +13,7 @@
         </packages>
 
         <classes>
-            <class name="testCase.InvoiceSalesApplicationTest"></class>
+            <class name="testCase.ApplicationForInvoicingTest"></class>
 
         </classes>
     </test>

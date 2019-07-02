@@ -1,7 +1,12 @@
 package javaBean;
 
 import java.util.List;
-
+/**
+ * @Classname SubformInvoiceSalesApplicationVO
+ * @Description 封装获取开票申请子表的信息对象
+ * @Date 2019/7/1 10:04
+ * @Created by:lixiaoming1
+ */
 public class SubformInvoiceSalesApplicationVO {
     private List<SubformInvoiceSalesApplication> application;
 
@@ -35,6 +40,9 @@ public class SubformInvoiceSalesApplicationVO {
                     ", order_type=" + order_type +
                     ", del_flag=" + del_flag +
                     '}';
+        }
+        public String getSubformData(){
+            return "('"+application_no+"','"+shop_order_id+"','"+ec_order_no+"',"+order_type+","+del_flag+")";
         }
 
         public String getApplication_no() {

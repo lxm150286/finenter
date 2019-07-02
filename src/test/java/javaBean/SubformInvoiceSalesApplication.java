@@ -1,5 +1,10 @@
 package javaBean;
-
+/**
+ * @Classname
+ * @Description  封装开票子表对象
+ * @Date 2019/7/2 14:04
+ * @Created by:lixiaoming1
+*/
 public class SubformInvoiceSalesApplication {
     private String application_no;
     private String shop_order_id;
