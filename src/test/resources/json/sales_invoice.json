@@ -1,0 +1,25 @@
+{
+  "order_type":"2B销售订单",
+  "order_no":"234241231",
+  "shipping_date":"2019-12-12",
+  "customer_code":"",
+  "customer_name":"",
+  "currency":"人民币",
+  "sales_company_code":"",
+  "source_document":"",
+  "source_order_no":"",
+  "order_status":"2",
+  "shipping_quantity":"",
+  "data_source":"销售订单",
+  "shipping_method":"",
+  "shipping_channel":"",
+  "waybill_number":"",
+  "ec_order_no":"EC2019-702",
+  "del_flag":0,
+  "create_by":"",
+  "create_by_id":"",
+  "update_by":"",
+  "update_by_id":"",
+  "create_time":""
+
+}

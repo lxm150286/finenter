@@ -29,7 +29,7 @@ public class SubformInvoiceSalesApplicationVO {
         private String application_no;
         private String shop_order_id;
         private String ec_order_no;
-        private int  order_type;
+        private int  order_status;
 
         @Override
         public String toString() {
@@ -37,12 +37,12 @@ public class SubformInvoiceSalesApplicationVO {
                     "application_no='" + application_no + '\'' +
                     ", shop_order_id='" + shop_order_id + '\'' +
                     ", ec_order_no='" + ec_order_no + '\'' +
-                    ", order_type=" + order_type +
+                    ", order_status=" + order_status +
                     ", del_flag=" + del_flag +
                     '}';
         }
         public String getSubformData(){
-            return "('"+application_no+"','"+shop_order_id+"','"+ec_order_no+"',"+order_type+","+del_flag+")";
+            return "('"+application_no+"','"+shop_order_id+"','"+ec_order_no+"',"+order_status+","+del_flag+")";
         }
 
         public String getApplication_no() {
@@ -69,12 +69,12 @@ public class SubformInvoiceSalesApplicationVO {
             this.ec_order_no = ec_order_no;
         }
 
-        public int getOrder_type() {
-            return order_type;
+        public int getOrder_status() {
+            return order_status;
         }
 
-        public void setOrder_type(int order_type) {
-            this.order_type = order_type;
+        public void setOrder_status(int order_status) {
+            this.order_status = order_status;
         }
 
         public int getDel_flag() {

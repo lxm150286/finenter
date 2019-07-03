@@ -9,7 +9,7 @@ public class DataProvider {
     }
 //随机得到三位数的正整数
     public static String getThreeNumber() {
-        String number =String.valueOf(getNum(1, 1000) + 10000).substring(1);;
+        String number =String.valueOf(getNum(1, 10000) + 10000).substring(1);;
         return number;
     }
     /**
@@ -19,7 +19,22 @@ public class DataProvider {
         return "KP"+getNow("yyyMMddHHmm")+getThreeNumber();
     }
 
+    /**
+     * 生成发货订单编号:145635906798033
+     * @param
+     */
+    public static String getOrderNO(){
+        return "14563590679"+getThreeNumber();
+    }
+
+    /**
+     * 生成EC订单编号395145635906798033
+     * @return
+     */
+    public static String getECOrderNumber(){
+        return "EC3951456359067"+getThreeNumber();
+    };
     public static void main(String[] args) {
-       System.out.println(getInvoiceApplicationNumber());
+       System.out.println(getOrderNO());
     }
 }

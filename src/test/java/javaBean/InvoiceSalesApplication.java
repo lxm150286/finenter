@@ -7,7 +7,7 @@ package javaBean;
  */
 public class InvoiceSalesApplication {
     /**
-     * 状态
+     * 开票申请的状态
      */
     private int status;
     /**
@@ -78,8 +78,19 @@ public class InvoiceSalesApplication {
      * 店铺简称
      */
     private String  hop_short_name ;
+    /**
+     * 订单状态
+     */
+    private int order_status;
     public String getData(){
-        return "("+status+",'"+customer_service_note+"','"+application_no+"',"+invoice_type+",'"+invoice_category+"',"+shop_code+",'"+shop_order_id+"','"+ec_order_no+"',"+del_flag+");";
+        return "("+status+",'"+customer_service_note+"','"+application_no+"',"+invoice_type+",'"+invoice_category+"',"+shop_code+",'"+shop_order_id+"','"+ec_order_no+"',"+order_status+","+del_flag+");";
+    }
+    public int getOrder_status() {
+        return order_status;
+    }
+
+    public void setOrder_status(int order_status) {
+        this.order_status = order_status;
     }
     public int getStatus() {
         return status;

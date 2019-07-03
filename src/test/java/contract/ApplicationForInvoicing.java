@@ -10,6 +10,7 @@ import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
+import static helper.DataProvider.getECOrderNumber;
 import static helper.DataProvider.getInvoiceApplicationNumber;
 import static util.JDBCUtil.sqlExecute;
 import static util.JsonPathUtil.modifyFile;
@@ -39,12 +40,18 @@ public class ApplicationForInvoicing {
         invoiceApplicationSql();
          subInvoiceSalesApplication(application_no);
     }
+    public static void invoiceSalesApplication(String application_no,Boolean con) throws Exception{
+        String modjson = getUniqueApplicationNumber(application_no);
+        SalesApplication= JSON.parseObject(modjson,InvoiceSalesApplication.class);
+        invoiceApplicationSql();
+        subInvoiceSalesApplication(application_no,false);
+    }
     /**
      * 根据已生成的开票申请主表，生成子表信息
      *
      * @throws Exception
      */
-    public static void subInvoiceSalesApplication(String application_no) throws Exception {
+    public static void subInvoiceSalesApplication(String application_no,Boolean switchControl) throws Exception {
         //获取开票申请子表对象,把子表对象放在List集合里面
         subSalesApplicationVO = JSON.parseObject(SubReqJson, SubformInvoiceSalesApplicationVO.class);
         //获取开票申请子表对象,把子表对象放在List集合里面
@@ -54,6 +61,12 @@ public class ApplicationForInvoicing {
         for (int i = 0; i < getApplicationListLength; i++) {
            //通过一个application_no，子表关联主表
             subSalesApplicationVO.getApplication().get(i).setApplication_no(application_no);
+            //开关控制,修改EC订单编号
+          if(switchControl){
+              //一张开票只能关联一张EC订单
+              subSalesApplicationVO.getApplication().get(i).setEc_order_no(getECOrderNumber());
+          }
+
             //将对象转换成插入子表的内容，有多个则进行拼接
             String conent = subSalesApplicationVO.getApplication().get(i).getSubformData();
             if (getApplicationListLength > 1 && i < getApplicationListLength - 1) {
@@ -65,6 +78,14 @@ public class ApplicationForInvoicing {
         subformInvoicingApplicationSql(str);
     }
 
+    /**
+     * 重载生成子票信息
+     * @param application_no
+     * @throws Exception
+     */
+    public static void subInvoiceSalesApplication(String application_no)throws Exception {
+        subInvoiceSalesApplication(application_no,true);
+    }
     /**
      * 批量造单，创建开票申请主表，关联创建子表
      * @throws Exception
@@ -109,7 +130,7 @@ public class ApplicationForInvoicing {
      */
     private static void invoiceApplicationSql() throws SQLException {
         String str = SalesApplication.getData();
-        String sql = "insert into invoice_sales_application (status,customer_service_note,application_no,invoice_type,invoice_category,shop_code,shop_order_id,ec_order_no,del_flag) values" + str;
+        String sql = "insert into invoice_sales_application (status,customer_service_note,application_no,invoice_type,invoice_category,shop_code,shop_order_id,ec_order_no,order_status,del_flag) values" + str;
         System.out.println(sql);
         sqlExecute(sql);
     }
@@ -121,7 +142,7 @@ public class ApplicationForInvoicing {
      */
     private static void subformInvoicingApplicationSql(StringBuffer str) throws SQLException {
         //执行sql
-        String subsql = "insert into invoice_sales_application_detail (application_no,shop_order_id,ec_order_no,order_type,del_flag)VALUES" + str;
+        String subsql = "insert into invoice_sales_application_detail (application_no,shop_order_id,ec_order_no,order_status,del_flag)VALUES" + str;
         sqlExecute(subsql);
         System.out.println(subsql);
     }
