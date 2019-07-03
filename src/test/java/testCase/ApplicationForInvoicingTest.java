@@ -11,7 +11,7 @@ import static contract.ApplicationForInvoicing.*;
  * @Created by:lixiaoming1
  */
 public class ApplicationForInvoicingTest {
-    @Test(description = "批量造单，创建开票主表，根据主表的开票申请单号关联创建子表", invocationCount =2,threadPoolSize =2,priority = 0)
+    @Test(description = "批量造单，创建开票主表，根据主表的开票申请单号关联创建子表", invocationCount =100,threadPoolSize =50,priority = 0)
     public void test1() throws Exception{
         invoiceSalesApplicationBatch();
         System.out.printf("Thrad Id : %s%n",Thread.currentThread().getId());

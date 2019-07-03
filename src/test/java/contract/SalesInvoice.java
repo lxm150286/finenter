@@ -48,15 +48,16 @@ public class SalesInvoice {
     public static void subInvoiceSalesApplication(String orderNO,Boolean switchControl) throws Exception {
         //获取开票申请子表对象,把子表对象放在List集合里面
         salesInvoiceDetailObject = JSON.parseObject(SubReqJson, SalesInvoiceDetailVO.class);
+        System.out.println(salesInvoiceDetailObject);
         //获取开票申请子表对象,把子表对象放在List集合里面
-        int getApplicationListLength = salesInvoiceDetailObject.getSubSalesInvoiceEetail().size();
+        int getApplicationListLength = salesInvoiceDetailObject.getDeliverylist().size();
         StringBuffer str = new StringBuffer();
         //遍历循环获取对象
         for (int i = 0; i < getApplicationListLength; i++) {
             //orderNO，子表关联主表
-            salesInvoiceDetailObject.getSubSalesInvoiceEetail().get(i).setOrder_no(orderNO);
-            //将对象转换成插入子表的内容，有多个则进行拼接-----------------
-            String conent =  salesInvoiceDetailObject.getSubSalesInvoiceEetail().get(i).getMaterial_no();
+            salesInvoiceDetailObject.getDeliverylist().get(i).setOrder_no(orderNO);
+            //将对象转换成插入子表的内容，有多个则进行拼接
+            String conent =  salesInvoiceDetailObject.getDeliverylist().get(i).getSubSalesInvoiceData();
             if (getApplicationListLength > 1 && i < getApplicationListLength - 1) {
                 str.append(conent + ",");
             } else {
@@ -64,6 +65,7 @@ public class SalesInvoice {
             }
         }
        // subformInvoicingApplicationSql(str);
+        System.out.println(str);
     }
     /**
      * 销售发货订单执行的sql
@@ -84,6 +86,7 @@ public class SalesInvoice {
     }
     @Test
     public void test1()throws Exception{
-        salesInvoiceBeach();
+        //salesInvoiceBeach();
+        subInvoiceSalesApplication("43434",true);
     }
 }

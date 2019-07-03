@@ -9,14 +9,14 @@ import java.util.List;
  * @Created by:lixiaoming1
  */
 public class SalesInvoiceDetailVO {
-    private List<SubSalesInvoiceEetailVO> SubSalesInvoiceEetail;
+    private List<SubSalesInvoiceEetailVO> deliverylist;
 
-    public List<SubSalesInvoiceEetailVO> getSubSalesInvoiceEetail() {
-        return SubSalesInvoiceEetail;
+    public List <SubSalesInvoiceEetailVO> getDeliverylist() {
+        return deliverylist;
     }
 
-    public void setSubSalesInvoiceEetail(List<SubSalesInvoiceEetailVO> subSalesInvoiceEetail) {
-        SubSalesInvoiceEetail = subSalesInvoiceEetail;
+    public void setDeliverylist(List <SubSalesInvoiceEetailVO> deliverylist) {
+        this.deliverylist = deliverylist;
     }
 
     public static class SubSalesInvoiceEetailVO{
@@ -49,7 +49,10 @@ public class SalesInvoiceDetailVO {
        private String source_document;
        private String source_order_no;
        private String shop_order_id;
+      public String getSubSalesInvoiceData(){
+          return "("+order_no+","+line_no+",'"+product_code+"',"+gift_flag+","+component_flag+","+","+del_flag+");";
 
+      }
        public String getOrder_no() {
            return order_no;
        }
