@@ -52,6 +52,7 @@ public class ApplicationForInvoicing {
      * @throws Exception
      */
     public static void subInvoiceSalesApplication(String application_no,Boolean switchControl) throws Exception {
+       // String modjson = getUniqueECNumber(application_no);
         //获取开票申请子表对象,把子表对象放在List集合里面
         subSalesApplicationVO = JSON.parseObject(SubReqJson, SubformInvoiceSalesApplicationVO.class);
         //获取开票申请子表对象,把子表对象放在List集合里面
@@ -63,7 +64,7 @@ public class ApplicationForInvoicing {
             subSalesApplicationVO.getApplication().get(i).setApplication_no(application_no);
             //开关控制,修改EC订单编号
           if(switchControl){
-              //一张开票只能关联一张EC订单
+              //一张开票只能关联一张EC订单,随机获取EC订单编号
               subSalesApplicationVO.getApplication().get(i).setEc_order_no(getECOrderNumber());
           }
 
@@ -112,6 +113,8 @@ public class ApplicationForInvoicing {
         invoiceApplicationSql();
         subInvoiceSalesApplication(application_no);
     }
+
+
     /**
      * 开票申请单号唯一
      * @param application_no
@@ -125,13 +128,22 @@ public class ApplicationForInvoicing {
         return modjson;
     }
     /**
+     * 获取唯一的EC订单编号
+     */
+    private static String getUniqueECNumber(){
+        Map<String, Object> map = new HashMap<>();
+        map.put("$.application_no", getECOrderNumber());
+        return  null;
+    }
+    /**
      * 主表开票申请执行的sql
      * @throws SQLException
      */
-    private static void invoiceApplicationSql() throws SQLException {
+    private static void invoiceApplicationSql() throws Exception {
         String str = SalesApplication.getData();
         String sql = "insert into invoice_sales_application (status,customer_service_note,application_no,invoice_type,invoice_category,shop_code,shop_order_id,ec_order_no,order_status,del_flag) values" + str;
         System.out.println(sql);
+        Thread.sleep(10);
         sqlExecute(sql);
     }
 
@@ -140,9 +152,10 @@ public class ApplicationForInvoicing {
      * @param str
      * @throws SQLException
      */
-    private static void subformInvoicingApplicationSql(StringBuffer str) throws SQLException {
+    private static void subformInvoicingApplicationSql(StringBuffer str) throws Exception {
         //执行sql
         String subsql = "insert into invoice_sales_application_detail (application_no,shop_order_id,ec_order_no,order_status,del_flag)VALUES" + str;
+       Thread.sleep(10);
         sqlExecute(subsql);
         System.out.println(subsql);
     }

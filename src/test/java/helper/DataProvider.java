@@ -16,7 +16,7 @@ public class DataProvider {
      * 生成开票申请单号：KP2019050712140001
      */
     public static String getInvoiceApplicationNumber(){
-        return "KP"+getNow("yyyMMddHHmm")+getThreeNumber();
+        return "KP"+getNow("yyyMMddHHmm")+getThreeNumber()+getThreeNumber();
     }
 
     /**
@@ -28,11 +28,11 @@ public class DataProvider {
     }
 
     /**
-     * 生成EC订单编号395145635906798033
+     * 生成EC订单编号39514563590679803
      * @return
      */
     public static String getECOrderNumber(){
-        return "EC3951456359067"+getThreeNumber();
+        return "EC"+getThreeNumber()+getThreeNumber()+getThreeNumber();
     };
     public static void main(String[] args) {
        System.out.println(getOrderNO());
