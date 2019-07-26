@@ -1,5 +1,4 @@
 package contract;
-
 import com.alibaba.fastjson.JSON;
 import helper.FileHelper;
 import javaBean.InvoiceSalesApplication;
@@ -7,11 +6,9 @@ import javaBean.SalesInvoiceDetailVO;
 import javaBean.SalesInvoiceVO;
 import javaBean.SubformInvoiceSalesApplicationVO;
 import org.testng.annotations.Test;
-
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
-
 import static helper.DataProvider.*;
 import static util.JDBCUtil.sqlExecute;
 import static util.JsonPathUtil.modifyFile;

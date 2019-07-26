@@ -1,0 +1,37 @@
+{
+  "shopCode":10009,
+  "shopName":"旗舰店1",
+  "orderCode":"10190726104010483148792",
+  "shopOrderId":"10190726104010483148792",
+  "invoiceType":1,
+  "buyerType":1,
+  "invoiceTitle":"ppmoney",
+  "taxpayerNumber":"2435",
+  "buyerBank":"18213435",
+  "buyerBankAccount":"354657",
+  "buyerPhone":"43565",
+  "buyerAddress":"5465",
+  "invoiceReceiver":"战三",
+  "invoiceReceiverPhone":"546",
+  "invoiceReceiverMail":"",
+  "invoiceReceiverProvince":"广东",
+  "invoiceReceiverCity":"广州市",
+  "invoiceReceiverDistrict":"",
+  "invoiceReceiverAddress":"广州市",
+  "invoiceRemark":"你好你好",
+  "customerServiceRemark":"客户备注申请特批，确认无误",
+  "invoiceStatus":2,
+  "id":0,
+  "fileList":[
+    {
+      "uid":1563760516539,
+      "name":"0TERAVNBOWI{(W`4HIDSDEC.png",
+      "type":"image/png",
+      "ext":"png",
+      "fileSize":55268,
+      "status":"success",
+      "percentage":100,
+      "url":"nVLpVz3nMRDsOjthGGmrJjbEKKrjOPn6RE-o2SbC7yj-vahFgGK8VjVQLuNhjq4xVApPNXiuHQ8sA8Xdmj0e8I3ugkLHGeE_DgfM1suXtRDMimTWbth3ZV9yrMdJNMG8iqS8ny3VxBxx0tifqf1cpg%3D%3D"
+    }
+  ]
+}

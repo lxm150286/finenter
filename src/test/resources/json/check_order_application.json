@@ -1,0 +1,54 @@
+{
+  "dateType":"b.plat_start_time",
+  "startTime":null,
+  "endTime":null,
+  "orderType":[
+
+  ],
+  "orderStatus":[
+
+  ],
+  "businessType":[
+
+  ],
+  "handleType":[
+
+  ],
+  "hangStatus":"",
+  "sendChannel":[
+
+  ],
+  "storeIds":[
+
+  ],
+  "expressIds":[
+
+  ],
+  "paymentType":"",
+  "dispatchType":[
+
+  ],
+  "isBigorder":"",
+  "isExc":"",
+  "isBeyondarea":"",
+  "firConSet":"a.order_code",
+  "firConMat":"=",
+  "firConText":"10190720203447246946667",
+  "orderLink":"",
+  "secConSet":"",
+  "secConMat":"",
+  "secConText":"",
+  "pageNum":1,
+  "pageSize":50,
+  "sql1":"",
+  "waybillFlag":"",
+  "sql2":"a.order_code = '10190720203447246946667'",
+  "orderTypeStr":"",
+  "orderStatusStr":"",
+  "businessTypeStr":"",
+  "handleTypeStr":"",
+  "sendChannelStr":"",
+  "storeIdsStr":"",
+  "expressIdsStr":"",
+  "dispatchTypeStr":""
+}

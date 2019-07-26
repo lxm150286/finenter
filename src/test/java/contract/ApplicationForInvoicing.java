@@ -141,8 +141,8 @@ public class ApplicationForInvoicing {
      */
     private static void invoiceApplicationSql() throws Exception {
         String str = SalesApplication.getData();
-        String sql = "insert into invoice_sales_application (status,customer_service_note,application_no,invoice_type,invoice_category,shop_code,shop_order_id,ec_order_no,order_status,del_flag) values" + str;
-        System.out.println(sql);
+        String sql = "insert into invoice_sales_application (status,customer_service_note,application_no,invoice_type,invoice_category,shop_code,shop_order_id,ec_order_no,order_status,del_flag,purchaser_bank,bank_account,purchaser_phone,purchaser_area,invoice_remark,receiver,receiver_phone,receiver_email,receiver_province,receiver_city,receiver_district,receiver_address,invoice_info,taxpayer_id_no) values" + str;
+        //System.out.println(sql);
         Thread.sleep(10);
         sqlExecute(sql);
     }

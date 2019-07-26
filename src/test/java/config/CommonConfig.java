@@ -16,7 +16,12 @@ public class CommonConfig {
    public static String finenter_jdbc_url;
     public static String finenter_jdbc_user;
     public static String finenter_jdbc_password;
-
+    //OMS数据库链接信息
+    public static String oms_jdbc_url;
+    public static String omsr_jdbc_user;
+    public static String oms_jdbc_password;
+//oms系统配置参数
+    public static String oms_host_url;
 
     //初始化配置值
     static {

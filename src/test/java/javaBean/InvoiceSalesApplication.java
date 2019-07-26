@@ -82,16 +82,48 @@ public class InvoiceSalesApplication {
      * 订单状态
      */
     private int order_status;
+    private String  receiver_phone;
+    private String receiver_email;
+    private String receiver_province;
+    private String receiver_city;
+    private String receiver_district;
+    private String receiver_address;
+
     public String getData(){
-        return "("+status+",'"+customer_service_note+"','"+application_no+"',"+invoice_type+",'"+invoice_category+"',"+shop_code+",'"+shop_order_id+"','"+ec_order_no+"',"+order_status+","+del_flag+");";
-    }
-    public int getOrder_status() {
-        return order_status;
+        return "("+status+",'"+customer_service_note+"','"+application_no+"',"+invoice_type+",'"+invoice_category+"',"+shop_code+",'"+shop_order_id+"','"+ec_order_no+"',"+order_status+","+del_flag+",'"+purchaser_bank+"','"+bank_account+"','"+purchaser_phone+"','"+purchaser_area+"','"+invoice_remark+"','"+receiver+"','"+receiver_phone+"','"+receiver_email+"','"+receiver_province+"','"+receiver_city+"','"+receiver_district+"','"+receiver_address+"','"+invoice_info+"','"+taxpayer_id_no+"');";
     }
 
-    public void setOrder_status(int order_status) {
-        this.order_status = order_status;
+    @Override
+    public String toString() {
+        return "InvoiceSalesApplication{" +
+                "status=" + status +
+                ", customer_service_note='" + customer_service_note + '\'' +
+                ", application_no='" + application_no + '\'' +
+                ", invoice_type=" + invoice_type +
+                ", invoice_category='" + invoice_category + '\'' +
+                ", shop_code=" + shop_code +
+                ", shop_order_id='" + shop_order_id + '\'' +
+                ", ec_order_no='" + ec_order_no + '\'' +
+                ", invoice_info='" + invoice_info + '\'' +
+                ", taxpayer_id_no='" + taxpayer_id_no + '\'' +
+                ", purchaser_bank='" + purchaser_bank + '\'' +
+                ", bank_account='" + bank_account + '\'' +
+                ", purchaser_phone='" + purchaser_phone + '\'' +
+                ", purchaser_area='" + purchaser_area + '\'' +
+                ", invoice_remark='" + invoice_remark + '\'' +
+                ", receiver='" + receiver + '\'' +
+                ", del_flag=" + del_flag +
+                ", hop_short_name='" + hop_short_name + '\'' +
+                ", order_status=" + order_status +
+                ", receiver_phone='" + receiver_phone + '\'' +
+                ", receiver_email='" + receiver_email + '\'' +
+                ", receiver_province='" + receiver_province + '\'' +
+                ", receiver_city='" + receiver_city + '\'' +
+                ", receiver_district='" + receiver_district + '\'' +
+                ", receiver_address='" + receiver_address + '\'' +
+                '}';
     }
+
     public int getStatus() {
         return status;
     }
@@ -236,28 +268,59 @@ public class InvoiceSalesApplication {
         this.hop_short_name = hop_short_name;
     }
 
-    @Override
-    public String toString() {
-        return "InvoiceSalesApplication{" +
-                "status=" + status +
-                ", customer_service_note='" + customer_service_note + '\'' +
-                ", application_no='" + application_no + '\'' +
-                ", invoice_type=" + invoice_type +
-                ", invoice_category='" + invoice_category + '\'' +
-                ", shop_code=" + shop_code +
-                ", shop_order_id='" + shop_order_id + '\'' +
-                ", ec_order_no='" + ec_order_no + '\'' +
-                ", invoice_info='" + invoice_info + '\'' +
-                ", taxpayer_id_no='" + taxpayer_id_no + '\'' +
-                ", purchaser_bank='" + purchaser_bank + '\'' +
-                ", bank_account='" + bank_account + '\'' +
-                ", purchaser_phone='" + purchaser_phone + '\'' +
-                ", purchaser_area='" + purchaser_area + '\'' +
-                ", invoice_remark='" + invoice_remark + '\'' +
-                ", receiver='" + receiver + '\'' +
-                ", del_flag=" + del_flag +
-                ", hop_short_name='" + hop_short_name + '\'' +
-                '}';
+    public int getOrder_status() {
+        return order_status;
     }
 
+    public void setOrder_status(int order_status) {
+        this.order_status = order_status;
+    }
+
+    public String getReceiver_phone() {
+        return receiver_phone;
+    }
+
+    public void setReceiver_phone(String receiver_phone) {
+        this.receiver_phone = receiver_phone;
+    }
+
+    public String getReceiver_email() {
+        return receiver_email;
+    }
+
+    public void setReceiver_email(String receiver_email) {
+        this.receiver_email = receiver_email;
+    }
+
+    public String getReceiver_province() {
+        return receiver_province;
+    }
+
+    public void setReceiver_province(String receiver_province) {
+        this.receiver_province = receiver_province;
+    }
+
+    public String getReceiver_city() {
+        return receiver_city;
+    }
+
+    public void setReceiver_city(String receiver_city) {
+        this.receiver_city = receiver_city;
+    }
+
+    public String getReceiver_district() {
+        return receiver_district;
+    }
+
+    public void setReceiver_district(String receiver_district) {
+        this.receiver_district = receiver_district;
+    }
+
+    public String getReceiver_address() {
+        return receiver_address;
+    }
+
+    public void setReceiver_address(String receiver_address) {
+        this.receiver_address = receiver_address;
+    }
 }
